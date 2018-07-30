@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <style type="text/css">
+      {{var template_styles|raw}}
+       {{css file="css/email.css"}}
+      table {
+      	border-collapse:collapse; table-layout: fixed;
+
+      }
+
+      table tr td,table tr td{
+      		text-align: center;
+      	}
+    </style>
+    <!--[if gte mso 7]><xml>
+      <o:OfficeDocumentSettings>
+      <o:AllowPNG/>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml><![endif]-->
+</head>
+<body>
+{{inlinecss file="css/email-inline.css"}}
+  <center>
+    <!-- START LIQUID WRAPPER -->
+<!--[if mso]>
+<table cellpadding="0" cellspacing="0" border="0" style="padding:0px;margin:0px;width:100%;">
+    <tr><td colspan="3" style="padding:0px;margin:0px;font-size:20px;height:20px;" height="20">&nbsp;</td></tr>
+    <tr>
+        <td style="padding:0px;margin:0px;">&nbsp;</td>
+        <td style="padding:0px;margin:0px;" width="625">
+<![endif]-->
+    <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
+      <!--[if mso]>
+      <center>
+      <tr><td>
+      <table border="0" cellpadding="0" cellspacing="0" width="625">
+      <![endif]-->
+         <tr>
+            <td align="center" valign="top" id="bodyCell">
+<!-- Begin wrapper table -->
+<div class="wrapper-email" style="width:640px; margin-left:auto;margin-right:auto">
+<table width="625px"  border-spacing: 0>
+	<thead class="logo-head" style="border-bottom: 1px solid #BBBBBB;">
+		<tr>
+			<th class="logo-img" style="float: right;margin-bottom: 15px;">
+
+			  <img class="right  autowidth " align="right" border="0" src="https://s3.ap-south-1.amazonaws.com/max-labs/logo.png" alt="Image" title="Image" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: 0;height: auto;float: none;width: 100%;max-width: 193px" width="193">
+
+       </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr><td>
+			<div class="customer-detail-wrap" style="border-bottom: 1px solid #BBBBBB;margin:10px 0px 10px 0;padding: 15px 0px 15px 0px;">
+				<table  width="625" class="customer-detail" style="text-align:left;font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif;color: #555555;width:625px;">
+					<thead><tr><th align="left" ><span style="font-size: 14px; line-height: 19px;"><strong>{{trans "Dear %name," name=$order.getBillingAddress().getName()}} </strong></span></th></tr></thead>
+					<tbody><tr><td align="left" style="text-align: left"><p style="margin: 0;font-size: 14px;line-height: 17px"> {{trans 'Thank you for your order from Max Lab. Your Order <span class="no-link">#%increment_id</span>' increment_id=$order.increment_id |raw}}</p></td></tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="customer-detail-wrap" style="border-bottom: 1px solid #BBBBBB;margin:10px 0px 10px 0;padding: 15px 0px 15px 0px;">
+				<table width="100%">
+					<thead><tr><th class="img-heading" style="border: 1px solid #eb7422;background: #eb7422;" colspan="2">
+            <!--[if mso]>
+              <table width="50%"><tr><td>
+              <img width="625" class="center  autowidth  fullwidth" align="center" border="0" src="https://s3.ap-south-1.amazonaws.com/max-labs/Untitled-2.png" alt="Image" title="Image" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: 0;height: auto;float: none;width: 100%;max-width: 100%" >
+            </td></tr></table>
+              <div style="display:none">
+           <![endif]-->
+            <img class="center  autowidth  fullwidth" align="center" border="0" src="https://s3.ap-south-1.amazonaws.com/max-labs/Untitled-2.png" alt="Image" title="Image" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: 0;height: auto;float: none;width: 100%;max-width: 100%" width="625">
+            <!--[if mso]>
+              </div>
+           <![endif]-->
+          </th></tr></thead>
+					<tbody><tr>
+						<td width="50%" class="bill-info" style="border: 1px solid #71777D;border-top: none; text-align: left; padding-left: 25px; padding-top:15px;"><p>{{var formattedBillingAddress|raw}}</p></td>
+						<td width="50%" class="date-info" style="border: 1px solid #71777D;border-top: none; padding-top:15px;"><p>Date/Time: {{var max_schedule_date}} {{var max_schedule_time}}</p></td>
+					</tr></tbody>
+				</table>
+			</div>
+			<div class="customer-detail-wrap" style="border-bottom: 1px solid #BBBBBB;margin:10px 0px 10px 0;padding: 15px 0px 15px 0px;">
+				<table>
+					<thead>
+            <tr>
+              <th>
+    						<div style="font-size:12px;line-height:14px;color:#000000;font-family:'Lato', Tahoma, Verdana, Segoe, sans-serif;text-align:left;"><p style="margin: 0;font-size: 14px;line-height: 17px;text-align: left"><span style="font-size: 15px; line-height: 19px;"><strong> Payment Mode - </strong></span></p></div>
+            </th>
+            <th>
+              <div style="font-size:12px;line-height:14px;color:#000000;font-family:'Lato', Tahoma, Verdana, Segoe, sans-serif;text-align:left;"><p style="margin: 0;font-size: 14px;line-height: 17px;text-align: left"><span style="font-size: 15px; line-height: 19px;"><strong><span style="color: rgb(0, 128, 0); font-size: 16px; line-height: 19px;">{{var order.getPayment().getMethodInstance().getTitle()}}</span></strong></span></p></div>
+            </th>
+          </tr>
+					</thead><tbody><tr><td></td></tr></tbody>
+				</table>
+			</div>
+			<div class="items-wrapper">
+			 {{layout handle="sales_email_order_items" order=$order}}
+			</div>
+			<div>
+				<div style="color:#000000;font-family:'Lato', Tahoma, Verdana, Segoe, sans-serif;line-height:120%; padding-right: 10px; padding-left: 10px; padding-top: 30px; padding-bottom: 18px;">
+					<div style="font-size:12px;line-height:14px;color:#000000;font-family:'Lato', Tahoma, Verdana, Segoe, sans-serif;text-align:left;"><p style="margin: 0;font-size: 14px;line-height: 17px;text-align: center"><span style="font-size: 18px; line-height: 21px;"><strong>Recommended Packages</strong></span></p></div>
+				</div>
+				<table  class="product-table" width="100%">
+					<tbody>
+						<tr>
+							<td class="image-col" width="40%" style="padding: 15px;font-size: 12px;line-height: 14px;color: #083160;font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif;text-align: -webkit-center;border: 1px solid #71777D;border-right: transparent;">
+								<table><tbody>
+									<tr><td style="padding-left:10%; padding-right:10%">
+                    <!--[if mso]>
+                      <table width="50%"><tr><td>
+                      <img width="115"  class="center fixedwidth" align="center" border="0" src="https://s3.ap-south-1.amazonaws.com/max-labs/total-wellnes-profile.jpg" alt="Image" title="Image" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: 0;height: auto;float: none;width: 100%; max-width: 115px;margin-left: auto; margin-right: auto;vertical-align: baseline;">
+                    </td></tr></table>
+                      <div style="display:none">
+                   <![endif]-->
+									<img class="center fixedwidth" align="center" border="0" src="https://s3.ap-south-1.amazonaws.com/max-labs/total-wellnes-profile.jpg" alt="Image" title="Image" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: 0;height: auto;float: none;width: 100%; max-width: 115px;margin-left: auto; margin-right: auto;vertical-align: baseline;"></td></tr>
+                  <!--[if mso]>
+                     </div>
+                  <![endif]-->
+                  <tr><td>
+										<p style="margin: 0;font-size: 14px;line-height: 17px;text-align: center; padding-top: 15px; padding-bottom: 5px;"><strong>Wellwise Total profile</strong></p>
+									</td></tr>
+									<tr><td>
+										<p style="margin: 0;font-size: 14px;line-height: 17px;text-align: center; padding-top: 5px; padding-bottom: 10px"><strong>&nbsp;Rs.2,999</strong></p>
+									</td></tr>
+									<tr><td>
+										<div style="color: #ffffff;background-color: #e67015;border-radius: 4px;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-top: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-left: 0px solid transparent;padding-top: 5px;padding-right: 0px;padding-bottom: 5px;padding-left: 0px;font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif;text-align: center;margin-left: auto;margin-right: auto;width: 60%;min-width: 112px; max-width: 112px;mso-border-alt: none;">
+                      <a href="https://www.maxlab.co.in/index.php/total-wellness-profile.html" style="text-decoration:none !important;color:#FFFFFF">
+      										<span style="font-size:16px;line-height:32px;"><strong><span style="font-size: 14px; line-height: 28px;color: #FFFFFF;" data-mce-style="font-size: 14px; line-height: 28px;color: #FFFFFF;">Book Now</span></strong></span>
+                      </a>
+                      </div>
+									</td></tr>
+								</tbody></table>
+							</td>
+							<td class="detail-col" width="60%" style="border: 1px solid #71777D;border-left: transparent;">
+								<table><tbody>
+								<tr><td class="product-name" style="text-align: left;padding: 10px 15px 12px 2px;font-weight: bold;font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; color: #555555;font-size: 16px;line-height: 19px;">Components</td></tr>
+								<tr><td class="product-detail" style="text-align: left;padding: 0px 2px 30px 2px;font-size: 12px;font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif;color: #555555;"><p style="margin: 0;font-size: 13px;line-height: 17px;"><span style="font-weight: 600;">General: </span>Complete Hemogram, Urine Routine and Microscopy | <span style="font-weight: 600;">Diabetes: </span>Blood Sugar Fasting, Glycosylated Haemoglobin (HbA1c) | Heart: VLDL Cholesterol, Cholesterol Total, Triglycerides, HDL Cholesterol, Direct LDL Cholesterol & Cholesterol/HDL Ratio | <span style="font-weight: 600;">Kidney: </span>B.U.N (Blood Urea Nitrogen), Creatinine, Urea, Sodium, Potassium, Bicarbonate & Chloride | <span style="font-weight: 600;">Liver: </span>SGOT - Aspartate Amino Transferase, SGPT - Alanine Amino Transferase, Bilirubin Total and Direct Total Proteins with Albumin, Globulin, A/G, GGTP (Gamma GT), Alkaline Phosphate |
+                  <span style="font-weight: 600;">Bone: </span>Calcium, Uric Acid, 25 Hydroxy Vitamin D Level & Inorganic Phosphorous | <span style="font-weight: 600;">Nerve: </span>Vitamin B12 | <span style="font-weight: 600;">Thyroid: </span>FT3, FT4, TSH</p></td></tr>
+								</tbody></table>
+							</td>
+						</tr>
+						<tr>
+							<td class="image-col" width="40%" style="padding: 15px;font-size: 12px;line-height: 14px;color: #083160;font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif;text-align: -webkit-center;border: 1px solid #71777D;border-right: transparent;">
+								<table><tbody>
+									<tr><td style="padding-left:10%; padding-right:10%">
+                    <!--[if mso]>
+                      <table width="50%"><tr><td>
+                      <img width="115"  class="center fixedwidth" align="center" border="0" src="https://s3.ap-south-1.amazonaws.com/max-labs/total-wellnes-profile.jpg" alt="Image" title="Image" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: 0;height: auto;float: none;width: 100%; max-width: 115px;margin-left: auto; margin-right: auto;vertical-align: baseline;">
+                    </td></tr></table>
+                      <div style="display:none">
+                   <![endif]-->
+							          <img class="center fixedwidth" align="center" border="0" src="https://s3.ap-south-1.amazonaws.com/max-labs/total-wellnes-profile.jpg" alt="Image" title="Image" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: 0;height: auto;float: none;width: 100%; max-width: 115px;margin-left: auto; margin-right: auto;"></td></tr>
+                    <!--[if mso]>
+                       </div>
+                    <![endif]-->
+									<tr><td>
+										<p style="margin: 0;font-size: 14px;line-height: 17px;text-align: center; padding-top: 15px; padding-bottom: 5px;"><strong>WellWise Advanced Profile</strong></p>
+									</td></tr>
+									<tr><td>
+										<p style="margin: 0;font-size: 14px;line-height: 17px;text-align: center; padding-top: 5px; padding-bottom: 10px"><strong>&nbsp;Rs.1,820</strong></p>
+									</td></tr>
+									<tr><td>
+										<div style="color: #ffffff;background-color: #e67015;border-radius: 4px;-webkit-border-radius: 4px;-moz-border-radius: 4px;border-top: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-left: 0px solid transparent;padding-top: 5px;padding-right: 0px;padding-bottom: 5px;padding-left: 0px;font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif;text-align: center;margin-left: auto;margin-right: auto;width: 60%;min-width: 112px; max-width: 112px;mso-border-alt: none;">
+                        <a href="https://www.maxlab.co.in/index.php/max-basic-wellness-panel.html" style="text-decoration:none !important;color:#FFFFFF">
+      										<span style="font-size:16px;line-height:32px;"><strong><span style="font-size: 14px; line-height: 28px;color: #FFFFFF;" data-mce-style="font-size: 14px; color: #FFFFFF;line-height: 28px;">Book Now</span></strong></span>
+                        </a>
+                      </div>
+									</td></tr>
+								</tbody></table>
+							</td>
+							<td class="detail-col" width="60%" style="border: 1px solid #71777D;border-left: transparent;">
+								<table><tbody>
+								<tr><td class="product-name" style="text-align: left;padding: 10px 15px 12px 2px;font-weight: bold;font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; color: #555555;font-size: 16px;line-height: 19px;">Components</td></tr>
+								<tr><td class="product-detail" style="text-align: left;padding: 0px 2px 30px 2px;font-size: 12px;font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif;color: #555555;"><p style="margin: 0;font-size: 13px;line-height: 17px;"><span style="font-weight: 600;">General: </span>Complete Hemogram, Urine Routine and Microscopy | <span style="font-weight: 600;">Diabetes: </span>Blood Sugar Fasting, Glycosylated Hemoglobin (HbA1c) | <span style="font-weight: 600;">Heart: </span>VLDL Cholesterol, Cholesterol Total, Triglycerides, HDL Cholesterol, Direct LDL Cholesterol & Cholesterol/HDL Ratio | <span style="font-weight: 600;">Kidney: </span>B.U.N (Blood Urea Nitrogen), Creatinine, Urea, Sodium, Potassium, Bicarbonate & Chloride | <span style="font-weight: 600;">Liver: </span>SGOT - Aspartate Amino Transferase, SGPT - Alanine Amino Transferase, Bilirubin Total and Direct Total Proteins with Albumin, Globulin, A/G, GGTP (Gamma GT), Alkaline Phosphate |
+                  <span style="font-weight: 600;">Bone: </span>Calcium, Uric Acid | <span style="font-weight: 600;">Thyroid: </span>FT3, FT4, TSH</p></td></tr>
+								</tbody></table>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="ad-image" style="margin-top:25px;" >
+				<table><tbody><tr><td>
+					<div align="center" class="img-container center fixedwidth " style="padding-right: 0px;  padding-left: 0px;">
+            <!--[if mso]>
+             <table width="50%"><tr><td>
+             <img width="625" class="center fixedwidth" align="center" border="0" src="https://s3.ap-south-1.amazonaws.com/max-labs/bann.jpg" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: 0;height: auto;float: none;width: 100%;max-width: 100%;">
+           </td></tr></table>
+             <div style="display:none">
+          <![endif]-->
+  						<img class="center fixedwidth" align="center" border="0" src="https://s3.ap-south-1.amazonaws.com/max-labs/bann.jpg" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: 0;height: auto;float: none;width: 100%;max-width: 100%;">
+            <!--[if mso]>
+              </div>
+           <![endif]-->
+					</div>
+				</td></tr></tbody></table>
+			</div>
+			<div class="footer-cpright" style="width: 300px;margin-left: auto;margin-right: auto;padding: 10px;text-align: -webkit-center;">
+				<table><tbody><tr><td>
+					<div style="font-size:12px;line-height:14px;font-family:Lato, Tahoma, Verdana, Segoe, sans-serif;color:#555555;text-align:left;"><p style="margin: 0;font-size: 13px;line-height: 17px;text-align: center">© 2018 Max Lab . All rights reserved</p></div>
+				</td></tr></tbody></table>
+			</div>
+		</td></tr>
+	</tbody>
+</table>
+</div>
+
+
+<style>
+table {
+	border-collapse:collapse; table-layout: fixed;
+
+}
+
+table tr td,table tr td{
+		text-align: center;
+	}
+</style>
+<!-- End wrapper table -->
+<!--[if mso]>
+   </td></tr>
+   </table>
+   </center>
+<![endif]-->
+<!-- // END TEMPLATE -->
+            </td><!-- /#bodyCell -->
+         </tr>
+      </table><!-- /#bodyTable -->
+
+      <!--[if mso]>
+        </td>
+        <td style="padding:0px;margin:0px;">&nbsp;</td>
+    </tr>
+    <tr><td colspan="3" style="padding:0px;margin:0px;font-size:20px;height:20px;" height="20">&nbsp;</td></tr>
+</table>
+<![endif]-->
+   </center>
+</body>
+</html>
